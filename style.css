@@ -1,0 +1,209 @@
+/* Paleta de Cores (Inspirada no Palmeiras) */
+:root {
+    --verde-escuro: #006437;
+    --verde-periquito: #008542;
+    --verde-claro: #e8f5e9;
+    --branco: #ffffff;
+    --grafite: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: var(--grafite);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: var(--verde-escuro);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--branco);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--verde-claro);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--verde-claro);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 74, 40, 0.7), rgba(0, 100, 55, 0.8)), 
+                url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--branco);
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: var(--branco);
+    color: var(--verde-escuro);
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--verde-periquito);
+    color: var(--branco);
+}
+
+/* Seções Gerais */
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: var(--verde-claro);
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.text-content h2 {
+    color: var(--verde-escuro);
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+blockquote {
+    border-left: 4px solid var(--verde-periquito);
+    padding-left: 15px;
+    margin-top: 20px;
+    font-style: italic;
+    color: var(--verde-escuro);
+}
+
+.image-placeholder img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.center-text {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.center-text h2 {
+    color: var(--verde-escuro);
+    font-size: 32px;
+}
+
+/* Abas Interativas (Tabs) */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.tab-btn {
+    background-color: transparent;
+    border: 2px solid var(--verde-escuro);
+    color: var(--verde-escuro);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.tab-btn.active, .tab-btn:hover {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+}
+
+.tab-box {
+    background-color: var(--branco);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-top: 5px solid var(--verde-periquito);
+}
+
+/* Footer */
+footer {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .grid-2, .grid-2.invert {
+        grid-template-columns: 1fr;
+    }
+    .grid-2.invert .image-placeholder {
+        order: 2;
+    }
+    .hero-content h1 {
+        font-size: 32px;
+    }
+}
