@@ -1,0 +1,37 @@
+// Dados que alimentarão a seção de sustentabilidade
+const dadosSustentabilidade = [
+    {
+        titulo: "Sistema de Plantio Direto (SPD)",
+        descricao: "Consiste em cultivar a terra sem arar o solo previamente. O plantio é feito sobre os restos vegetais da colheita anterior. Isso protege o solo contra a erosão, preserva a umidade da terra e reduz drasticamente a emissão de gases poluentes dos tratores."
+    },
+    {
+        titulo: "Integração Lavoura-Pecuária-Floresta (ILPF)",
+        descricao: "Uma estratégia que integra atividades agrícolas, pecuárias e florestais em uma mesma área. Otimiza o uso da terra, melhora a fertilidade do solo com a rotação de culturas e ainda proporciona sombra e bem-estar para o gado através das árvores plantadas."
+    },
+    {
+        titulo: "Uso de Bioinsumos",
+        descricao: "Defensivos e fertilizantes biológicos baseados em microrganismos (como fungos e bactérias do bem). Eles combatem pragas e ajudam no crescimento das plantas sem agredir o lençol freático e mantendo a fauna local em perfeito equilíbrio."
+    }
+];
+
+// Função para mudar o conteúdo da aba de sustentabilidade
+function mudarTab(index) {
+    // Captura todos os botões e remove a classe 'active'
+    const botoes = document.querySelectorAll('.tab-btn');
+    botoes.forEach(btn => btn.classList.remove('active'));
+
+    // Adiciona a classe 'active' ao botão clicado
+    botoes[index].classList.add('active');
+
+    // Altera o conteúdo interno do container
+    const containerConteudo = document.getElementById('tab-content');
+    containerConteudo.innerHTML = `
+        <h3 style="color: #006437; margin-bottom: 10px;">${dadosSustentabilidade[index].titulo}</h3>
+        <p>${dadosSustentabilidade[index].descricao}</p>
+    `;
+}
+
+// Inicializa a primeira aba assim que a página carrega
+window.onload = function() {
+    mudarTab(0);
+};
